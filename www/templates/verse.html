@@ -1,0 +1,120 @@
+<ion-view view-title="Chapter" >
+<ion-content class-"padding">
+<ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue="true" show-pager="false">
+<ion-slide>
+  <div class="list card">
+
+    <div class="item item-avatar">
+      <img src="img/dhammasukha.jpg">
+      <h2>Verse {{pagezero.nr}}</h2>
+      <p ng-show="!story">{{pagezero.summary}}</p>
+      <p ng-show="story">{{pagezero.story.title}}</p>
+    </div>
+
+    <div ng-show="story" class="item item-body">
+      <p ng-repeat="paragraph in pagezero.story.text|nlToArray track by $index">{{paragraph}}</p>
+    </div>
+
+    <div ng-show="!story" class="item item-body">
+      <div class="item item-image">
+        <img  ng-src="img/Dhammapada_{{pagezero.nr}}.jpg"/>
+      </div>
+
+
+      <p>
+      {{pagezero.text}}
+      </p>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" href="#" ng-click="togglestory()">
+        <span ng-show="!story"><i class="icon ion-document-text"></i> Story </span>
+        <span ng-show="story"><i class="icon ion-document"></i> Verse </span>
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+      </a>
+    </div>
+
+  </div>
+</ion-slide>
+<ion-slide>
+  <div class="list card">
+
+    <div class="item item-avatar">
+      <img src="img/dhammasukha.jpg">
+      <h2>Verse {{pageone.nr}}</h2>
+      <p ng-show="!story">{{pageone.summary}}</p>
+      <p ng-show="story">{{pageone.story.title}}</p>
+    </div>
+
+    <div ng-show="story" class="item item-body">
+      <p ng-repeat="paragraph in pageone.story.text|nlToArray track by $index">{{paragraph}}</p>
+    </div>
+
+    <div ng-show="!story" class="item item-body">
+      <div class="item item-image">
+        <img  ng-src="img/Dhammapada_{{pageone.nr}}.jpg"/>
+      </div>
+
+
+      <p>
+      {{pageone.text}}
+      </p>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" href="#" ng-click="togglestory()">
+        <span ng-show="!story"><i class="icon ion-document-text"></i> Story </span>
+        <span ng-show="story"><i class="icon ion-document"></i> Verse </span>
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+      </a>
+    </div>
+
+  </div>
+</ion-slide>
+<ion-slide>
+  <div class="list card">
+
+    <div class="item item-avatar">
+      <img src="img/dhammasukha.jpg">
+      <h2>Verse {{pagetwo.nr}}</h2>
+      <p ng-show="!story">{{pagetwo.summary}}</p>
+      <p ng-show="story">{{pagetwo.story.title}}</p>
+    </div>
+
+    <div ng-show="story" class="item item-body">
+      <p ng-repeat="paragraph in pagetwo.story.text|nlToArray track by $index">{{paragraph}}</p>
+    </div>
+
+    <div ng-show="!story" class="item item-body">
+      <div class="item item-image">
+        <img  ng-src="img/Dhammapada_{{pagetwo.nr}}.jpg"/>
+      </div>
+
+
+      <p>
+      {{pagetwo.text}}
+      </p>
+    </div>
+
+    <div class="item tabs tabs-secondary tabs-icon-left">
+      <a class="tab-item" href="#" ng-click="togglestory()">
+        <span ng-show="!story"><i class="icon ion-document-text"></i> Story </span>
+        <span ng-show="story"><i class="icon ion-document"></i> Verse </span>
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+      </a>
+    </div>
+
+  </div>
+</ion-slide>
+</ion-slide-box>
+</ion-content>
+</ion-view>
